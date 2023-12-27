@@ -2,7 +2,7 @@
     "name": "zeeshan-mukhtar",
     "version": "1.0.0",
     "author": "Zeeshan Mukhtar <zeshanmukhtar878@gmail.com> (https://zeeshan-resume.netlify.app/)",
-    "description": "A simple CLI to generate a Dev card for Zeeshan Mukhtar.",
+    "description": "🌟 Passionate about creating pixel-perfect web experiences and turning coffee into code. Let's build something extraordinary together!",
     "main": "card.js",
     "bin": "./card.js",
     "repository": {
@@ -24,12 +24,11 @@
         "request": "^2.88.2"
     },
     "keywords": [
-        "card",
-        "npm",
-        "npm card",
-        "npx",
-        "npx card",
-        "business card"
+        "💻 Frontend",
+        "🌐 Web Developer",
+        "🚀 MERN Stack Enthusiast",
+        "📱 Mobile App Developer",
+        "🎨 UI/UX Designer"
     ],
     "license": "ISC"
 }
