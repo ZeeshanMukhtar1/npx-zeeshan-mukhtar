@@ -20,18 +20,69 @@ const user_data = JSON.parse(res);
 const {
   user_name,
   user_email,
-  twitter_username,
+  instagram_username,
   linkedin_username,
   github_username,
   personal_site,
   npx_card_handle,
   job_title,
   resume_url,
+  introduction,
+  languages,
+  qualifications,
+  goals,
 } = user_data;
 
 const linkedinUrl = 'https://www.linkedin.com/in/zeeshanmukhtar1/';
 
 const prompt = inquirer.createPromptModule();
+
+const data = {
+  name: chalk.bold.green(`                  ${user_name}`),
+  work: `${chalk.white(`${job_title}`)}`,
+  instagram:
+    chalk.gray('https://instagram.com/') +
+    chalk.magentaBright(`${instagram_username}`),
+  linkedin:
+    chalk.gray('https://linkedin.com/in/') + chalk.blue(`${linkedin_username}`),
+  github: chalk.gray('https://github.com/') + chalk.green(`${github_username}`),
+  web: chalk.cyan(`${personal_site}`),
+  npx: chalk.red('npx') + ' ' + chalk.white(`${npx_card_handle}`),
+  labelWork: chalk.white.bold('       Work:'),
+  labelInstagram: chalk.white.bold(' Instagram:'),
+  labelLinkedIn: chalk.white.bold('   LinkedIn:'),
+  labelGitHub: chalk.white.bold('     GitHub:'),
+  labelWeb: chalk.white.bold('        Web:'),
+  labelCard: chalk.white.bold('       Card:'),
+};
+
+const me = boxen(
+  [
+    `${data.name}`,
+    ``,
+    `${data.labelWork}  ${data.work}`,
+    `${data.labelInstagram}  ${data.instagram}`,
+    `${data.labelLinkedIn}  ${data.linkedin}`,
+    `${data.labelGitHub}  ${data.github}`,
+    `${data.labelWeb}  ${data.web}`,
+    ``,
+    `${data.labelCard}  ${data.npx}`,
+    ``,
+    `${chalk.italic('I am currently looking for new opportunities,')}`,
+    `${chalk.italic('my inbox is always open. Whether you have a')}`,
+    `${chalk.italic('question or just want to say hi, I will try ')}`,
+    `${chalk.italic('my best to get back to you!')}`,
+  ].join('\n'),
+  {
+    margin: 1,
+    float: 'center',
+    padding: 1,
+    borderStyle: 'single',
+    borderColor: 'green',
+  }
+);
+
+console.log(me);
 
 const questions = [
   {
@@ -55,6 +106,34 @@ const questions = [
           console.log('\nRedirecting to LinkedIn profile...\n');
         },
       },
+      //// Explore Introduction
+      {
+        name: `Learn more about me: ${chalk.cyan('Introduction')}`,
+        value: () => {
+          console.log(`${chalk.bold('Introduction:')} ${introduction}\n`);
+        },
+      },
+      //// Explore Languages
+      {
+        name: `Explore my expertise: ${chalk.yellow('Languages')}`,
+        value: () => {
+          console.log(`${chalk.bold('Languages:')} ${languages.join(', ')}\n`);
+        },
+      },
+      //// Explore Qualifications
+      {
+        name: `My Qualifications: ${chalk.magentaBright('Qualifications')}`,
+        value: () => {
+          console.log(`${chalk.bold('Qualifications:')} ${qualifications}\n`);
+        },
+      },
+      //// Explore Goals
+      {
+        name: `My Goals: ${chalk.green.bold('Goals')}`,
+        value: () => {
+          console.log(`${chalk.bold('Goals:')} ${goals}\n`);
+        },
+      },
       //// Quit
       {
         name: 'Just quit and catch you later!',
@@ -65,52 +144,5 @@ const questions = [
     ],
   },
 ];
-
-const data = {
-  name: chalk.bold.green(`                  ${user_name}`),
-  work: `${chalk.white(`${job_title}`)}`,
-  twitter:
-    chalk.gray('https://twitter.com/') + chalk.cyan(`${twitter_username}`),
-  github: chalk.gray('https://github.com/') + chalk.green(`${github_username}`),
-  linkedin:
-    chalk.gray('https://linkedin.com/in/') + chalk.blue(`${linkedin_username}`),
-  web: chalk.cyan(`${personal_site}`),
-  npx: chalk.red('npx') + ' ' + chalk.white(`${npx_card_handle}`),
-  labelWork: chalk.white.bold('       Work:'),
-  labelTwitter: chalk.white.bold('    Twitter:'),
-  labelGitHub: chalk.white.bold('     GitHub:'),
-  labelLinkedIn: chalk.white.bold('   LinkedIn:'),
-  labelWeb: chalk.white.bold('        Web:'),
-  labelCard: chalk.white.bold('       Card:'),
-};
-
-const me = boxen(
-  [
-    `${data.name}`,
-    ``,
-    `${data.labelWork}  ${data.work}`,
-    ``,
-    `${data.labelTwitter}  ${data.twitter}`,
-    `${data.labelGitHub}  ${data.github}`,
-    `${data.labelLinkedIn}  ${data.linkedin}`,
-    `${data.labelWeb}  ${data.web}`,
-    ``,
-    `${data.labelCard}  ${data.npx}`,
-    ``,
-    `${chalk.italic('I am currently looking for new opportunities,')}`,
-    `${chalk.italic('my inbox is always open. Whether you have a')}`,
-    `${chalk.italic('question or just want to say hi, I will try ')}`,
-    `${chalk.italic('my best to get back to you!')}`,
-  ].join('\n'),
-  {
-    margin: 1,
-    float: 'center',
-    padding: 1,
-    borderStyle: 'single',
-    borderColor: 'green',
-  }
-);
-
-console.log(me);
 
 prompt(questions).then((answer) => answer.action());

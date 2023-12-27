@@ -7,5 +7,22 @@
     "linkedin_username": "zeeshanmukhtar1",
     "github_username": "zeeshanMukhtar1",
     "personal_site": "https://zeeshan-resume.netlify.app/",
-    "resume_url": "https://zeeshan-resume.netlify.app/"
+    "resume_url": "https://zeeshan-resume.netlify.app/",
+    "introduction": "Self-taught Frontend Web Developer with a passion for crafting magical experiences on the web. I love to learn and contribute in any and every possible way.",
+    "languages": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "TypeScript",
+        "React.js",
+        "React Native",
+        "Express.js",
+        "Tailwind CSS",
+        "Sass",
+        "Chakra UI",
+        "Git",
+        "Bootstrap"
+    ],
+    "qualifications": "Bachelor's degree in Information Technology",
+    "goals": "Advancing web development proficiency and exploring the MERN stack."
 }
