@@ -84,7 +84,7 @@ const me = boxen(
 
 console.log(me);
 
-const questions = [
+const mainMenu = [
   {
     type: 'list',
     name: 'action',
@@ -96,6 +96,7 @@ const questions = [
         value: () => {
           open(`mailto:${user_email}`);
           console.log('\nDone, see you soon at inbox.\n');
+          displayMainMenu();
         },
       },
       //// Download Online Resume (LinkedIn)
@@ -104,6 +105,7 @@ const questions = [
         value: () => {
           open(linkedinUrl);
           console.log('\nRedirecting to LinkedIn profile...\n');
+          displayMainMenu();
         },
       },
       //// Explore Introduction
@@ -111,6 +113,7 @@ const questions = [
         name: `Learn more about me: ${chalk.cyan('Introduction')}`,
         value: () => {
           console.log(`${chalk.bold('Introduction:')} ${introduction}\n`);
+          displayMainMenu();
         },
       },
       //// Explore Languages
@@ -118,6 +121,7 @@ const questions = [
         name: `Explore my expertise: ${chalk.yellow('Languages')}`,
         value: () => {
           console.log(`${chalk.bold('Languages:')} ${languages.join(', ')}\n`);
+          displayMainMenu();
         },
       },
       //// Explore Qualifications
@@ -125,6 +129,7 @@ const questions = [
         name: `My Qualifications: ${chalk.magentaBright('Qualifications')}`,
         value: () => {
           console.log(`${chalk.bold('Qualifications:')} ${qualifications}\n`);
+          displayMainMenu();
         },
       },
       //// Explore Goals
@@ -132,7 +137,13 @@ const questions = [
         name: `My Goals: ${chalk.green.bold('Goals')}`,
         value: () => {
           console.log(`${chalk.bold('Goals:')} ${goals}\n`);
+          displayMainMenu();
         },
+      },
+      //// Go back to menu
+      {
+        name: `Go back to ${chalk.cyan.bold('menu')}`,
+        value: displayMainMenu,
       },
       //// Quit
       {
@@ -145,4 +156,8 @@ const questions = [
   },
 ];
 
-prompt(questions).then((answer) => answer.action());
+function displayMainMenu() {
+  prompt(mainMenu).then((answer) => answer.action());
+}
+
+displayMainMenu();
