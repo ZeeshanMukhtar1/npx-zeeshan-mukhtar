@@ -96,12 +96,12 @@ const mainMenu = [
           displayMainMenu();
         },
       },
-      //// Download Online Resume (LinkedIn)
+      //// Read my Tech Articles
       {
-        name: `Download my ${chalk.magentaBright.bold('Online Resume')}?`,
+        name: `Read my ${chalk.blue.bold('Tech Articles')}?`,
         value: () => {
-          open(linkedinUrl);
-          console.log('\nRedirecting to LinkedIn profile...\n');
+          open(`https://zeeshanmukhtar1.hashnode.dev/`);
+          console.log('\nRedirecting to my Tech Articles...\n');
           displayMainMenu();
         },
       },
@@ -117,10 +117,20 @@ const mainMenu = [
       {
         name: `Explore my expertise: ${chalk.yellow('Languages')}`,
         value: () => {
-          console.log(`${chalk.bold('Languages:')} ${languages.join(', ')}\n`);
+          console.log(`${chalk.bold('Skills:')}`);
+          for (const category in user_data.skills) {
+            if (user_data.skills.hasOwnProperty(category)) {
+              console.log(
+                `${chalk.bold(category)}: ${user_data.skills[category].join(
+                  ', '
+                )}\n`
+              );
+            }
+          }
           displayMainMenu();
         },
       },
+
       //// Explore Qualifications
       {
         name: `My Qualifications: ${chalk.magentaBright('Qualifications')}`,
@@ -142,11 +152,11 @@ const mainMenu = [
         name: `Go back to ${chalk.cyan.bold('menu')}`,
         value: displayMainMenu,
       },
-      //// Quit
+      //// Farewell Message
       {
-        name: 'Just quit and catch you later!',
+        name: 'Say goodbye for now!',
         value: () => {
-          console.log('Hasta la vista.\n');
+          console.log('You will be missed. Until next time!\n');
         },
       },
     ],

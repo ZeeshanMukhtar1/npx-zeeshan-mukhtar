@@ -7,21 +7,39 @@
     "linkedin_username": "zeeshanmukhtar1",
     "github_username": "zeeshanMukhtar1",
     "personal_site": "https://zeeshan-resume.netlify.app/",
-    "introduction": "Self-taught Frontend Web Developer with a passion for crafting magical experiences on the web. I love to learn and contribute in any and every possible way.",
-    "languages": [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "TypeScript",
-        "React.js",
-        "React Native",
-        "Express.js",
-        "Tailwind CSS",
-        "Sass",
-        "Chakra UI",
-        "Git",
-        "Bootstrap"
-    ],
+    "introduction": "Self-taught Full Stack Developer specializing in the MERN (MongoDB, Express.js, React.js, Node.js) stack. Passionate about crafting magical experiences on the web and building robust, scalable, and user-friendly applications. I also have a basic understanding of mobile app development using React Native. I love to learn and contribute in any and every possible way.",
+    "skills": {
+        "Languages": [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "TypeScript"
+        ],
+        "Frontend Frameworks/Libraries": [
+            "React.js"
+        ],
+        "Backend Frameworks": [
+            "Express.js"
+        ],
+        "Styling Tools": [
+            "Tailwind CSS",
+            "Sass",
+            "Bootstrap",
+            "Chakra UI"
+        ],
+        "Version Control": [
+            "Git"
+        ],
+        "API Integration/Testing": [
+            "Postman",
+            "Fetch API"
+        ],
+        "Mobile App Development": [
+            "React Native",
+            "Native wind",
+            "React Native Reanimated"
+        ]
+    },
     "qualifications": "Bachelor's degree in Information Technology",
     "goals": "Advancing web development proficiency and exploring the MERN stack."
 }
