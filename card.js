@@ -9,8 +9,6 @@ const clear = require('clear');
 const open = require('open');
 const fs = require('fs');
 const path = require('path');
-const ora = require('ora');
-const cliSpinners = require('cli-spinners');
 
 clear();
 
@@ -26,14 +24,13 @@ const {
   personal_site,
   npx_card_handle,
   job_title,
-  resume_url,
   introduction,
   languages,
   qualifications,
   goals,
 } = user_data;
 
-const linkedinUrl = 'https://www.linkedin.com/in/zeeshanmukhtar1/';
+const linkedinUrl = `https://www.linkedin.com/in/${linkedin_username}/`;
 
 const prompt = inquirer.createPromptModule();
 
@@ -44,7 +41,7 @@ const data = {
     chalk.gray('https://instagram.com/') +
     chalk.magentaBright(`${instagram_username}`),
   linkedin:
-    chalk.gray('https://linkedin.com/in/') + chalk.blue(`${linkedin_username}`),
+    chalk.gray(`https://linkedin.com/in/`) + chalk.blue(`${linkedin_username}`),
   github: chalk.gray('https://github.com/') + chalk.green(`${github_username}`),
   web: chalk.cyan(`${personal_site}`),
   npx: chalk.red('npx') + ' ' + chalk.white(`${npx_card_handle}`),
@@ -95,7 +92,7 @@ const mainMenu = [
         name: `Send me an ${chalk.green.bold('email')}?`,
         value: () => {
           open(`mailto:${user_email}`);
-          console.log('\nDone, see you soon at inbox.\n');
+          console.log('\nDone, see you soon at the inbox.\n');
           displayMainMenu();
         },
       },

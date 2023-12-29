@@ -1,5 +1,5 @@
 {
-    "name": "zeeshan-mukhtar",
+    "name": "zeeshan",
     "version": "1.0.1",
     "author": "Zeeshan Mukhtar <zeshanmukhtar878@gmail.com> (https://zeeshan-resume.netlify.app/)",
     "description": "🌟 Passionate about creating pixel-perfect web experiences and turning coffee into code. Let's build something extraordinary together!",
@@ -7,7 +7,7 @@
     "bin": "./card.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ZeeshanMukhtar1/npx-zeeshan-mukhtar"
+        "url": "https://github.com/ZeeshanMukhtar1/npx-zeeshan"
     },
     "scripts": {
         "setup": "ncu -u && npm i",
@@ -20,15 +20,12 @@
         "cli-spinners": "^2.5.0",
         "inquirer": "^7.3.3",
         "open": "^7.3.1",
-        "ora": "^5.3.0",
-        "request": "^2.88.2"
+        "ora": "^5.3.0"
     },
     "keywords": [
         "💻 Frontend",
         "🌐 Web Developer",
-        "🚀 MERN Stack Enthusiast",
-        "📱 Mobile App Developer",
-        "🎨 UI/UX Designer"
+        "🚀 MERN Stack Enthusiast"
     ],
     "license": "ISC"
 }
